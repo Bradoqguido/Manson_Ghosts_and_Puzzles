@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PassiveIdleReaper-Sheet.png-e08f65d4c0eb1c4d4615bda1818376f2.stex"
+path="res://.import/themanor-original.png-2118ee84e9b5ff574c06e09aad0eef35.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PassiveIdleReaper-Sheet.png"
-dest_files=[ "res://.import/PassiveIdleReaper-Sheet.png-e08f65d4c0eb1c4d4615bda1818376f2.stex" ]
+source_file="res://Assets/themanor-original.png"
+dest_files=[ "res://.import/themanor-original.png-2118ee84e9b5ff574c06e09aad0eef35.stex" ]
 
 [params]
 
@@ -20,7 +20,7 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
+flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false
 flags/srgb=2
@@ -30,5 +30,5 @@ process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0
