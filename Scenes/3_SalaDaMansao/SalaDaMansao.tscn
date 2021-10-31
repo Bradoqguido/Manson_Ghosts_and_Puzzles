@@ -280,7 +280,9 @@ volume_db = -15.0
 autoplay = true
 
 [connection signal="body_entered" from="PortaQuarto" to="." method="_on_PortaQuarto_body_entered"]
+[connection signal="body_exited" from="PortaQuarto" to="." method="_on_PortaQuarto_body_exited"]
 [connection signal="body_entered" from="PortaBanheiro" to="." method="_on_PortaBanheiro_body_entered"]
 [connection signal="body_entered" from="PortaEscritorio" to="." method="_on_PortaEscritorio_body_entered"]
 [connection signal="body_entered" from="PortaSaida" to="." method="_on_PortaSaida_body_entered"]
+[connection signal="body_exited" from="PortaSaida" to="." method="_on_PortaSaida_body_exited"]
 [connection signal="body_entered" from="PortaPorao" to="." method="_on_PortaPorao_body_entered"]

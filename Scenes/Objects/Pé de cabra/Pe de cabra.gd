@@ -12,7 +12,7 @@ func _input(delta):
 	if get_node_or_null('DialogNode') == null:
 		if dialogoAtivo:
 			peDeCabraNoInventario = true
-			Global.chamarDialogo("ChaveDoPorao")
+			Global.chamarDialogo("PeDeCabra")
 			$CollisionShape2D.hide()
 			dialogoAtivo = false
 
