@@ -17,14 +17,14 @@
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 4 ), ExtResource( 12 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Run",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 6 ), ExtResource( 10 ), ExtResource( 5 ), ExtResource( 7 ) ],
 "loop": true,
 "name": "Idle",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 4 ), ExtResource( 12 ), ExtResource( 2 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "Run",
 "speed": 10.0
 } ]
 
@@ -32,7 +32,7 @@ animations = [ {
 extents = Vector2( 6.70748, 13.381 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 12.6004, 18.9933 )
+extents = Vector2( 9.51363, 17.029 )
 
 [node name="Ghost" type="KinematicBody2D"]
 script = ExtResource( 14 )
