@@ -24,6 +24,10 @@ func _physics_process(delta):
 	else:
 		sprite.play("Run")
 	
+	if $Timer.time_left <= 0:
+		$Ghost_walk.play()
+		$Timer.start(3.5)
+	
 	sprite.flip_h = direction.x < 0
 	
 	if (midNight):
