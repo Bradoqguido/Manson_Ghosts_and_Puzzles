@@ -29,3 +29,4 @@ position = Vector2( 6.92957, 6.61459 )
 shape = SubResource( 2 )
 
 [connection signal="body_entered" from="CollisionShape2D/PegarPeDeCabra" to="." method="_on_PegarPeDeCabra_body_entered"]
+[connection signal="body_exited" from="CollisionShape2D/PegarPeDeCabra" to="." method="_on_PegarPeDeCabra_body_exited"]
