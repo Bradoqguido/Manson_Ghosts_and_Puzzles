@@ -11,7 +11,7 @@ config_version=4
 [application]
 
 config/name="Godot Games"
-run/main_scene="res://Scenes/SalaDaMansao.tscn"
+run/main_scene="res://Scenes/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
