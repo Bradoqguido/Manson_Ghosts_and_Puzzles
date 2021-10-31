@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Autoloads/AudioHandler.gd" type="Script" id=1]
+
+[node name="AudioHandler" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Musica_Menu" type="AudioStreamPlayer" parent="."]
+volume_db = -17.0
+
+[node name="Efeito_Porta" type="AudioStreamPlayer" parent="."]

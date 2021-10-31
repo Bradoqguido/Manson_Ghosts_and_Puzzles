@@ -12,6 +12,7 @@ var peDeCabraNoInventario = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+	AudioHandler.stop_music_menu()
 
 func _input(delta):
 	if get_node_or_null('DialogNode') == null:
@@ -20,6 +21,10 @@ func _input(delta):
 			dialogoChaveAtivo = false
 
 func _on_Area2D_body_entered(body):
+<<<<<<< HEAD
+	AudioHandler.play_sound_door()
+	scene_changer.change_scene("res://Scenes/3_SalaDaMansao/SalaDaMansao.tscn")
+=======
 	if body == player:
 		if chaveNoInventario:
 			scene_changer.change_scene("res://Scenes/3_SalaDaMansao/SalaDaMansao.tscn")
@@ -32,3 +37,4 @@ func _on_Chave_body_entered(body):
 func _on_Chave_body_exited(body):
 	if body == player:
 		dialogoChaveAtivo = false
+>>>>>>> dac02aa53228c13c3c327a2df0a09a299ee0d984

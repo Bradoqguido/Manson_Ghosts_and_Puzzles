@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/escritorio.png" type="Texture" id=2]
@@ -32,18 +32,9 @@ extents = Vector2( 4.21039, 9.77505 )
 
 [sub_resource type="RectangleShape2D" id=9]
 
-[sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 10, 20.8687 )
-
-[sub_resource type="RectangleShape2D" id=11]
-extents = Vector2( 23.5928, 20.4771 )
-
-[sub_resource type="RectangleShape2D" id=12]
-extents = Vector2( 24.629, 11.086 )
-
 [sub_resource type="SegmentShape2D" id=13]
 a = Vector2( 144.487, 198.125 )
-b = Vector2( 144.767, 236.008 )
+b = Vector2( 144.763, 235.855 )
 
 [sub_resource type="SegmentShape2D" id=14]
 a = Vector2( 81.2365, 277.885 )
@@ -53,7 +44,9 @@ b = Vector2( 52.0681, 278.083 )
 extents = Vector2( 6.93439, 9.12152 )
 
 [sub_resource type="RectangleShape2D" id=16]
-extents = Vector2( 10, 16 )
+extents = Vector2( 141.628, 9.36362 )
+
+[sub_resource type="RectangleShape2D" id=18]
 
 [sub_resource type="RectangleShape2D" id=17]
 extents = Vector2( 15.9942, 17.8777 )
@@ -123,24 +116,12 @@ shape = SubResource( 8 )
 position = Vector2( 435.286, 294.583 )
 shape = SubResource( 9 )
 
-[node name="CollisionShape2D11" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 369.546, 190.57 )
-shape = SubResource( 10 )
-
-[node name="CollisionShape2D12" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 590.876, 192 )
-shape = SubResource( 11 )
-
-[node name="CollisionShape2D14" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 434.58, 189.52 )
-shape = SubResource( 12 )
-
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 214.187, 159.38 )
+position = Vector2( 220.922, 158.819 )
 shape = SubResource( 13 )
 
 [node name="CollisionShape2D16" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 292.742, 91.9239 )
+position = Vector2( 291.9, 95.0107 )
 shape = SubResource( 14 )
 
 [node name="CollisionShape2D17" type="CollisionShape2D" parent="Paredes"]
@@ -148,38 +129,25 @@ position = Vector2( 610.388, 388.38 )
 shape = SubResource( 15 )
 
 [node name="CollisionShape2D18" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 344, 176 )
+position = Vector2( 482.618, 197.639 )
 shape = SubResource( 16 )
 
-[node name="CollisionShape2D19" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 392, 176 )
-shape = SubResource( 16 )
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Paredes"]
 
-[node name="CollisionShape2D20" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 472, 176 )
-shape = SubResource( 16 )
-
-[node name="CollisionShape2D21" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 480, 176 )
-shape = SubResource( 16 )
-
-[node name="CollisionShape2D22" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 536, 176 )
-shape = SubResource( 16 )
-
-[node name="CollisionShape2D23" type="CollisionShape2D" parent="Paredes"]
-position = Vector2( 552, 176 )
-shape = SubResource( 16 )
+[node name="CollisionShape2D24" type="CollisionShape2D" parent="Paredes"]
+shape = SubResource( 18 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 4 )
 volume_db = -17.0
 autoplay = true
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="cofre" type="Area2D" parent="."]
 
-[node name="colisor_cofre" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2( 510.023, 191.183 )
+[node name="colisor_cofre" type="CollisionShape2D" parent="cofre"]
+position = Vector2( 510.023, 192.814 )
 shape = SubResource( 17 )
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="cofre" to="." method="_on_cofre_body_entered"]
+[connection signal="body_exited" from="cofre" to="." method="_on_cofre_body_exited"]
