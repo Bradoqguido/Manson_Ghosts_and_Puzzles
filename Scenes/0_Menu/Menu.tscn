@@ -1,10 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Scenes/0_Menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://Assets/Telas/logo.png" type="Texture" id=2]
 [ext_resource path="res://Assets/Fonts/PixeloidSans-Bold.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Assets/Telas/mansion.png" type="Texture" id=4]
-[ext_resource path="res://Musics/Musica_Menu.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 25
@@ -118,11 +117,6 @@ margin_right = 192.0
 margin_bottom = 196.0
 custom_fonts/font = SubResource( 4 )
 text = "sair"
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource( 5 )
-volume_db = -20.0
-autoplay = true
 
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/start" to="." method="_on_Button_pressed"]
 [connection signal="pressed" from="Control/CenterContainer/VBoxContainer/CenterContainer2/VBoxContainer/instrucoes" to="." method="_on_instrucoes_pressed"]
