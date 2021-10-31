@@ -5,7 +5,7 @@ signal scene_chenged()
 onready var animation_player = $AnimationPlayer
 onready var ColorRect = $Control/ColorRect
 
-func change_scene(path, delay = 0.5):
+func change_scene(path, delay = 0.2):
 	yield(get_tree().create_timer(delay), "timeout")
 	animation_player.play_backwards("fade")
 	yield(animation_player, "animation_finished")

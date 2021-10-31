@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/banheiro2.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/6_Banheiro/Banheiro.gd" type="Script" id=3]
+[ext_resource path="res://Musics/Ambient_1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.3889, 19.1731 )
@@ -131,5 +132,10 @@ shape = SubResource( 12 )
 [node name="CollisionShape2D15" type="CollisionShape2D" parent="Parede"]
 position = Vector2( 212.896, 103.942 )
 shape = SubResource( 13 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -17.0
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]

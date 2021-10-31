@@ -5,7 +5,6 @@ var direction = Vector2.ZERO
 
 onready var scene_changer = SceneChanger
 onready var player = Global.Player
-onready var midNight = Global.midNight
 onready var sprite = $Sprite
 onready var colisor = $CollisionShape2D
 
@@ -24,11 +23,16 @@ func _physics_process(delta):
 	else:
 		sprite.play("Run")
 	
+	if $Timer.time_left <= 0:
+		$Ghost_walk.play()
+		$Timer.start(3.5)
+	
 	sprite.flip_h = direction.x < 0
 	
-	if (midNight):
+	if Global.senhaDoCofreNoInventario:
 		colisor.disabled = true
 
 func _on_ToqueGelido_body_entered(body):
 	if body == player:
+		Global.playerMorreu()
 		scene_changer.change_scene("res://Scenes/GameOver/GameOver.tscn")

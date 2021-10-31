@@ -12,6 +12,8 @@ onready var sprite = $Sprite
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Global.Player = self
+	if (Global.player_position != null):
+		global_transform.origin = Global.player_position
 
 func _physics_process(delta):
 	var input = Vector2.ZERO # input do usuário
@@ -26,5 +28,10 @@ func _physics_process(delta):
 		sprite.play("Idle")
 	else:
 		sprite.play("Run")
+		if $Timer.time_left <= 0:
+			$Walking.play()
+			$Timer.start(0.2)
 	
 	sprite.flip_h = direction.x < 0
+	
+
