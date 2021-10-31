@@ -26,5 +26,10 @@ func _physics_process(delta):
 		sprite.play("Idle")
 	else:
 		sprite.play("Run")
+		if $Timer.time_left <= 0:
+			$Walking.play()
+			$Timer.start(0.2)
 	
 	sprite.flip_h = direction.x < 0
+	
+
