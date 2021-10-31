@@ -1,11 +1,49 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/quartonovo.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/4_Quarto/Quarto.gd" type="Script" id=3]
+[ext_resource path="res://Musics/Ambient_1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.75, 15.25 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 4.74747, 149.995 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 59.4878, 3.89166 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 158.316, 7.37531 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 5.20837, 160 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 4.20975, 19.482 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 33.7752, 10 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 23.0038, 23.4927 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 12.949, 6.73555 )
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 184, 10 )
+
+[sub_resource type="RectangleShape2D" id=11]
+extents = Vector2( 14.0617, 14.5303 )
+
+[sub_resource type="RectangleShape2D" id=12]
+extents = Vector2( 10, 2.41287 )
+
+[sub_resource type="SegmentShape2D" id=13]
+a = Vector2( 92.7342, 95.2449 )
+b = Vector2( 92.3991, 125.91 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -29,5 +67,68 @@ position = Vector2( 399, 427 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+
+[node name="Parede" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 278.135, 272 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 315.746, 411.88 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 581.795, 415.265 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 736, 280 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 371.003, 432.676 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 427.218, 432.323 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 685.297, 208 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 339.175, 208.794 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 492.503, 241.589 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 546.32, 230.108 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 464, 192 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 316.246, 366.783 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 354.677, 375.068 )
+shape = SubResource( 12 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 270.253, 263.953 )
+shape = SubResource( 13 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -17.0
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
