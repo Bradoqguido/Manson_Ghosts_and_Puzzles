@@ -1,0 +1,15 @@
+{
+	"events": [
+		{
+			"character": "character-1635695684.json",
+			"event_id": "dialogic_001",
+			"portrait": "",
+			"text": "O cofre está trancado! \nVocê precisa de uma senha para abrir o cofre."
+		}
+	],
+	"metadata": {
+		"dialogic-version": "1.3",
+		"file": "timeline-1635703373.json",
+		"name": "CofreTrancado"
+	}
+}
