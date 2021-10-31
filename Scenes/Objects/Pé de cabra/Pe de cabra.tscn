@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Objects/pedecabra.png" type="Texture" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.0764, 12.1933 )
+
+[node name="PeDeCabra" type="KinematicBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 5.95948, 2.51623 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 6.68786, 2.31758 )
+scale = Vector2( 1.40144, 1.40144 )
+texture = ExtResource( 1 )
