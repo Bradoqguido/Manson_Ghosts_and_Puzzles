@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper4.png" type="Texture" id=1]
 [ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper3.png" type="Texture" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper2.png" type="Texture" id=12]
 [ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper6.png" type="Texture" id=13]
 [ext_resource path="res://Enemy/Ghost.gd" type="Script" id=14]
+[ext_resource path="res://Sound_Efects/Ghost_Sound.ogg" type="AudioStream" id=15]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -48,5 +49,13 @@ shape = SubResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ToqueGelido"]
 shape = SubResource( 3 )
+
+[node name="Ghost_walk" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 15 )
+volume_db = -13.0
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 
 [connection signal="body_entered" from="ToqueGelido" to="." method="_on_ToqueGelido_body_entered"]
