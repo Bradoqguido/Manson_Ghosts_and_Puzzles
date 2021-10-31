@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Fantasma_Meia_Noite.mp3-8541a3aa1f7f2eb7645cab943519d7ae.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Fantasma_Meia_Noite.mp3"
+dest_files=[ "res://.import/Fantasma_Meia_Noite.mp3-8541a3aa1f7f2eb7645cab943519d7ae.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

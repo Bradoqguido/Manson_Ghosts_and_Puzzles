@@ -1,0 +1,121 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assets/banheiro2.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.2522, 176 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 80, 8 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 84.8523, 3.4162 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 32, 4.20572 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 4.20392, 26.3061 )
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 40, 16 )
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 23.998, 37.4749 )
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 14.4714, 14.83 )
+
+[sub_resource type="RectangleShape2D" id=9]
+extents = Vector2( 16, 10 )
+
+[sub_resource type="SegmentShape2D" id=10]
+a = Vector2( 69.7688, 58.9054 )
+b = Vector2( 63.8109, 43.8439 )
+
+[sub_resource type="SegmentShape2D" id=11]
+a = Vector2( -19.1272, 11.0947 )
+b = Vector2( -9.59195, 10.565 )
+
+[sub_resource type="SegmentShape2D" id=12]
+a = Vector2( 205.516, 142.308 )
+b = Vector2( 206.182, 125.936 )
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 351.686
+margin_top = 66.8162
+margin_right = 673.686
+margin_bottom = 539.816
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Parede" type="KinematicBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 640, 288 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 381.525, 288 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 560, 200 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 464, 448 )
+shape = SubResource( 3 )
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 624, 448 )
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 545.147, 470.364 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 600, 472 )
+shape = SubResource( 5 )
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 586.778, 240.794 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 420.115, 316.628 )
+shape = SubResource( 7 )
+
+[node name="CollisionShape2D10" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 614.529, 419.33 )
+shape = SubResource( 8 )
+
+[node name="CollisionShape2D11" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 456, 224 )
+shape = SubResource( 9 )
+
+[node name="CollisionShape2D12" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 456, 200 )
+shape = SubResource( 2 )
+
+[node name="CollisionShape2D13" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 336.529, 188.509 )
+shape = SubResource( 10 )
+
+[node name="CollisionShape2D14" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 483.673, 337.037 )
+shape = SubResource( 11 )
+
+[node name="CollisionShape2D15" type="CollisionShape2D" parent="Parede"]
+position = Vector2( 212.896, 103.942 )
+shape = SubResource( 12 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 528, 224 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Porta_Abrindo.mp3-f3e8941f5b1a8ffbe052307842e23962.mp3str"
+
+[deps]
+
+source_file="res://Sounds/Porta_Abrindo.mp3"
+dest_files=[ "res://.import/Porta_Abrindo.mp3-f3e8941f5b1a8ffbe052307842e23962.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

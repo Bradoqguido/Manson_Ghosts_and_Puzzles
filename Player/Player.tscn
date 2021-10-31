@@ -1,0 +1,42 @@
+[gd_scene load_steps=17 format=2]
+
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper7.png" type="Texture" id=1]
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper8.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Reaper/Passive idle/PassiveIdleReaper1.png" type="Texture" id=3]
+[ext_resource path="res://Assets/Reaper/Passive idle/PassiveIdleReaper3.png" type="Texture" id=4]
+[ext_resource path="res://Assets/Reaper/Passive idle/PassiveIdleReaper5.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Reaper/Passive idle/PassiveIdleReaper4.png" type="Texture" id=6]
+[ext_resource path="res://Assets/Reaper/Passive idle/PassiveIdleReaper2.png" type="Texture" id=7]
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper4.png" type="Texture" id=8]
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper3.png" type="Texture" id=9]
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper5.png" type="Texture" id=10]
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper1.png" type="Texture" id=11]
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper6.png" type="Texture" id=12]
+[ext_resource path="res://Assets/Reaper/Passive running/PassiveRunningReaper2.png" type="Texture" id=13]
+[ext_resource path="res://Player/Player.gd" type="Script" id=14]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 1 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "Run",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 3 ), ExtResource( 7 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 14.6911 )
+
+[node name="Player" type="KinematicBody2D"]
+script = ExtResource( 14 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+animation = "Run"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )
