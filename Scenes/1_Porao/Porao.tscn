@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/porao-original.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/Objects/Pé de cabra/Pe de cabra.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Scenes/1_Porao/Porao.gd" type="Script" id=4]
+[ext_resource path="res://Musics/Ambient_1.ogg" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -22,13 +23,13 @@ extents = Vector2( 2.68613, 16.2537 )
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 10.4127, 11.7628 )
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 17.7024, 2.32023 )
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 81.1119, 6.3459 )
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=9]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 4 )
@@ -108,17 +109,22 @@ shape = SubResource( 6 )
 
 [node name="CollisionShape2D13" type="CollisionShape2D" parent="Parede"]
 position = Vector2( 478.465, 422.858 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="CollisionShape2D14" type="CollisionShape2D" parent="Parede"]
 position = Vector2( 520.547, 238.328 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="Chave" type="Area2D" parent="."]
 
 [node name="ColisorChave" type="CollisionShape2D" parent="Chave"]
 position = Vector2( 558.062, 241.343 )
-shape = SubResource( 7 )
+shape = SubResource( 9 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -17.0
+autoplay = true
 
 [connection signal="body_entered" from="Porta" to="." method="_on_Area2D_body_entered"]
 [connection signal="body_entered" from="Chave" to="." method="_on_Chave_body_entered"]
