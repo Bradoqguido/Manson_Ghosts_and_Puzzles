@@ -2,8 +2,6 @@ extends Node2D
 
 onready var scene_changer = SceneChanger
 onready var player = Global.Player
-onready var chaveDaPortaPrincipalDaMansaoNoInventario = Global.chaveDaPortaPrincipalDaMansaoNoInventario
-onready var peDeCabraNoInventario = Global.peDeCabraNoInventario
 
 var dialogoAtivo = false
 var dialogo = ""
@@ -44,7 +42,7 @@ func _on_PortaQuarto_body_exited(body):
 
 func _on_PortaEscritorio_body_entered(body):
 	if body == player:
-		if peDeCabraNoInventario:
+		if Global.chaveDoEscritorioNoInventario:
 			AudioHandler.play_sound_door()
 			scene_changer.change_scene("res://Scenes/5_Escritorio/Escritorio.tscn")
 
@@ -55,7 +53,7 @@ func _on_PortaBanheiro_body_entered(body):
 
 func _on_PortaSaida_body_entered(body):
 	if body == player:
-		if chaveDaPortaPrincipalDaMansaoNoInventario:
+		if Global.chaveDaPortaPrincipalDaMansaoNoInventario:
 			AudioHandler.play_sound_door()
 			scene_changer.change_scene("res://Scenes/GameWinner/GameWinner.tscn")
 		else:

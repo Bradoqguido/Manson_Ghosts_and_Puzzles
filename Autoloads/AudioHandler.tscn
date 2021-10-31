@@ -9,3 +9,5 @@ script = ExtResource( 1 )
 volume_db = -17.0
 
 [node name="Efeito_Porta" type="AudioStreamPlayer" parent="."]
+
+[node name="Loot" type="AudioStreamPlayer" parent="."]
