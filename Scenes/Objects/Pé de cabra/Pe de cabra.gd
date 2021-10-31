@@ -18,6 +18,7 @@ func _input(delta):
 
 func _on_PegarPeDeCabra_body_entered(body):
 	if body == player:
+		peDeCabraNoInventario = true
 		dialogoAtivo = true
 
 func _on_PegarPeDeCabra_body_exited(body):
