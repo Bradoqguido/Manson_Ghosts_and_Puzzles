@@ -55,7 +55,7 @@ position = Vector2( 480, 407 )
 shape = SubResource( 1 )
 
 [node name="PeDeCabra" parent="." instance=ExtResource( 3 )]
-position = Vector2( 555.25, 370.971 )
+position = Vector2( 560.007, 366.809 )
 
 [node name="Parede" type="KinematicBody2D" parent="."]
 

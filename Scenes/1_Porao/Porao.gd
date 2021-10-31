@@ -16,16 +16,8 @@ func _ready():
 func _input(delta):
 	if get_node_or_null('DialogNode') == null:
 		if dialogoChaveAtivo:
-			get_tree().paused = true
-			var dialog = Dialogic.start('ChaveDoPorao')
-			dialog.pause_mode = Node.PAUSE_MODE_PROCESS
-			dialog.connect('timeline_end', self, 'unpause')
-			add_child(dialog)
-
-
-func unpause(timeline_name):
-	get_tree().paused = false
-	dialogoChaveAtivo = false
+			Global.chamarDialogo("ChaveDoPorao")
+			dialogoChaveAtivo = false
 
 func _on_Area2D_body_entered(body):
 	if body == player:
