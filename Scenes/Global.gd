@@ -5,4 +5,3 @@ onready var midNight = false
 
 func _on_Timer_timeout():
 	midNight = true
-	

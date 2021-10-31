@@ -11,12 +11,13 @@ config_version=4
 [application]
 
 config/name="Godot Games"
-run/main_scene="res://Scenes/Game.tscn"
+run/main_scene="res://Scenes/0_Menu/Menu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 Global="*res://Scenes/Global.tscn"
+SceneChanger="*res://Scenes/SceneChanger/SceneChanger.tscn"
 
 [display]
 

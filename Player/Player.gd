@@ -28,4 +28,3 @@ func _physics_process(delta):
 		sprite.play("Run")
 	
 	sprite.flip_h = direction.x < 0
-
