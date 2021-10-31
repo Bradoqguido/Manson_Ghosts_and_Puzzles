@@ -1,6 +1,13 @@
 extends Node2D
 
 onready var scene_changer = SceneChanger
+onready var player = Global.Player
+
+varDialogoChaveAtivo = false
+varChavePrincipalNoInventario = false
+
+varDialogoCofreAtivo = false
+varSenhaCofreNoInventario = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
