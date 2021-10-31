@@ -6,6 +6,7 @@ onready var chaveDaPortaPrincipalDaMansaoNoInventario = false
 onready var peDeCabraNoInventario = false
 onready var chaveDoEscritorioNoInventario = false
 onready var senhaDoCofreNoInventario = false
+onready var chaveDoEscritorioNoInventario = false
 
 func chamarDialogo(dialogo): # Passar o nome do dialogo que você quer executar.
 	get_tree().paused = true # Não esquecer de colocar essa linha na função "on_<objeto>_body_exited" com o valor "false" para despausar o game.
