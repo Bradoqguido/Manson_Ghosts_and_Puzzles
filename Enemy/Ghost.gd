@@ -3,6 +3,7 @@ extends KinematicBody2D
 export(int) var SPEED = 80
 var direction = Vector2.ZERO
 
+onready var scene_changer = SceneChanger
 onready var player = Global.Player
 onready var midNight = Global.midNight
 onready var sprite = $Sprite
@@ -27,3 +28,7 @@ func _physics_process(delta):
 	
 	if (midNight):
 		colisor.disabled = true
+
+func _on_ToqueGelido_body_entered(body):
+	if body == player:
+		scene_changer.change_scene("res://Scenes/GameOver/GameOver.tscn")
