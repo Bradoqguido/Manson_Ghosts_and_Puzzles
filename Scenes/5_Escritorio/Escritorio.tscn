@@ -1,8 +1,9 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assets/escritorio.png" type="Texture" id=2]
 [ext_resource path="res://Scenes/5_Escritorio/Escritorio.gd" type="Script" id=3]
+[ext_resource path="res://Musics/Ambient_1.ogg" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 18.3889, 10.45 )
@@ -72,7 +73,7 @@ __meta__ = {
 }
 
 [node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 550.721, 386.272 )
+position = Vector2( 547.153, 379.137 )
 
 [node name="Area2D" type="Area2D" parent="."]
 position = Vector2( 550.006, 420.923 )
@@ -173,5 +174,10 @@ shape = SubResource( 17 )
 [node name="CollisionShape2D23" type="CollisionShape2D" parent="Paredes"]
 position = Vector2( 552, 176 )
 shape = SubResource( 17 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = -17.0
+autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
