@@ -1,7 +1,6 @@
 extends Node2D
 
 onready var Player = null
-onready var midNight = false
 onready var chaveDaPortaPrincipalDaMansaoNoInventario = false
 onready var peDeCabraNoInventario = false
 onready var senhaDoCofreNoInventario = false
@@ -19,3 +18,10 @@ func chamarDialogo(dialogo): # Passar o nome do dialogo que você quer executar.
 
 func unpause(timeline_name):
 	get_tree().paused = false
+
+func playerMorreu():
+	chaveDaPortaPrincipalDaMansaoNoInventario = false
+	peDeCabraNoInventario = false
+	senhaDoCofreNoInventario = false
+	chaveDoEscritorioNoInventario = false
+	poraoTrancado = true
