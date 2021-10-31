@@ -2,6 +2,7 @@ extends Node2D
 
 onready var scene_changer = SceneChanger
 onready var player = Global.Player
+onready var chaveDaPortaPrincipalDaMansaoNoInventario = Global.chaveDaPortaPrincipalDaMansaoNoInventario
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,7 +22,8 @@ func _on_PortaBanheiro_body_entered(body):
 
 func _on_PortaSaida_body_entered(body):
 	if body == player:
-		scene_changer.change_scene("res://Scenes/GameWinner/GameWinner.tscn")
+		if chaveDaPortaPrincipalDaMansaoNoInventario:
+			scene_changer.change_scene("res://Scenes/GameWinner/GameWinner.tscn")
 
 func _on_PortaPorao_body_entered(body):
 	if body == player:
