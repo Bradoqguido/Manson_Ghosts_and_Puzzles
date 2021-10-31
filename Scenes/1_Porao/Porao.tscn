@@ -50,7 +50,7 @@ position = Vector2( 482.24, 302.245 )
 
 [node name="Porta" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Porta"]
+[node name="colisor_porta" type="CollisionShape2D" parent="Porta"]
 position = Vector2( 480, 407 )
 shape = SubResource( 1 )
 
@@ -127,5 +127,6 @@ volume_db = -17.0
 autoplay = true
 
 [connection signal="body_entered" from="Porta" to="." method="_on_Area2D_body_entered"]
+[connection signal="body_entered" from="Porta" to="." method="_on_Porta_body_entered"]
 [connection signal="body_entered" from="Chave" to="." method="_on_Chave_body_entered"]
 [connection signal="body_exited" from="Chave" to="." method="_on_Chave_body_exited"]

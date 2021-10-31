@@ -8,6 +8,7 @@ var chaveNoInventario = false
 
 var dialogoPeDeCabraAtivo = false
 var peDeCabraNoInventario = false
+var dialogoPoraoTrancado = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,15 +17,13 @@ func _ready():
 
 func _input(delta):
 	if get_node_or_null('DialogNode') == null:
-		if dialogoChaveAtivo:
+		if dialogoChaveAtivo && Global.poraoTrancado:
 			Global.chamarDialogo("ChaveDoPorao")
+			Global.poraoTrancado = false
 			dialogoChaveAtivo = false
-
-func _on_Area2D_body_entered(body):
-	if body == player:
-		if chaveNoInventario:
-			AudioHandler.play_sound_door()
-			scene_changer.change_scene("res://Scenes/3_SalaDaMansao/SalaDaMansao.tscn")
+		if Global.poraoTrancado && dialogoPoraoTrancado:
+			Global.chamarDialogo("PoraoTrancado")
+			dialogoPoraoTrancado = false
 
 func _on_Chave_body_entered(body):
 	if body == player:
@@ -34,3 +33,11 @@ func _on_Chave_body_entered(body):
 func _on_Chave_body_exited(body):
 	if body == player:
 		dialogoChaveAtivo = false
+
+func _on_Porta_body_entered(body):
+	if body == player:
+		if !Global.poraoTrancado:
+			AudioHandler.play_sound_door()
+			scene_changer.change_scene("res://Scenes/3_SalaDaMansao/SalaDaMansao.tscn")
+		else:
+			dialogoPoraoTrancado = true

@@ -7,14 +7,19 @@ var dialogoAtivo = false
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
-
+	if Global.peDeCabraNoInventario:
+		$CollisionShape2D.hide()
+		
 func _input(delta):
 	if get_node_or_null('DialogNode') == null:
+			
 		if dialogoAtivo:
-			peDeCabraNoInventario = true
-			Global.chamarDialogo("PeDeCabra")
-			$CollisionShape2D.hide()
-			dialogoAtivo = false
+			if !Global.peDeCabraNoInventario:
+				Global.peDeCabraNoInventario = true
+				Global.chamarDialogo("PeDeCabra")
+				$CollisionShape2D.hide()
+				dialogoAtivo = false
+			
 
 func _on_PegarPeDeCabra_body_entered(body):
 	if body == player:

@@ -8,29 +8,39 @@ onready var peDeCabraNoInventario = Global.peDeCabraNoInventario
 var dialogoAtivo = false
 var dialogo = ""
 
+var dialogoPortaEmperrada = false
+var dialogoPeDeCabra = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 func _input(delta):
 	if get_node_or_null('DialogNode') == null:
-		if dialogoAtivo:
-			Global.chamarDialogo(dialogo)
-			dialogoAtivo = false
-
-func _on_PortaQuarto_body_entered(body):
-	if body == player:
-		dialogo = "PortaEmperrada"
-		dialogoAtivo = true
-		if peDeCabraNoInventario:
-			dialogo = "UsarPeDeCabraNoQuarto"
-			dialogoAtivo = true
+		if dialogoPortaEmperrada:
+			Global.chamarDialogo("PortaEmperrada")
+			dialogoPortaEmperrada = false
+			
+		if dialogoPeDeCabra: 
+			Global.chamarDialogo("UsarPeDeCabraNoQuarto")
+			dialogoPeDeCabra = false
 			AudioHandler.play_sound_door()
 			scene_changer.change_scene("res://Scenes/4_Quarto/Quarto.tscn")
 
+func _on_PortaQuarto_body_entered(body):
+	if body == player:
+		if !Global.peDeCabraNoInventario:
+			dialogoPortaEmperrada = true
+		else:
+			dialogoPeDeCabra = true
+
+
 func _on_PortaQuarto_body_exited(body):
 	if body == player:
-		pass # Replace with function body.
+		if !Global.peDeCabraNoInventario:
+			dialogoPortaEmperrada = false
+		else:
+			dialogoPeDeCabra = false
 
 func _on_PortaEscritorio_body_entered(body):
 	if body == player:
