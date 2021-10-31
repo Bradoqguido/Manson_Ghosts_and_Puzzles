@@ -20,10 +20,13 @@ func _input(delta):
 
 func _on_PortaQuarto_body_entered(body):
 	if body == player:
-		dialogo = "UsarPeDeCabraNoQuarto"
+		dialogo = "PortaEmperrada"
 		dialogoAtivo = true
-		#AudioHandler.play_sound_door()
-		scene_changer.change_scene("res://Scenes/4_Quarto/Quarto.tscn")
+		if peDeCabraNoInventario:
+			dialogo = "UsarPeDeCabraNoQuarto"
+			dialogoAtivo = true
+			AudioHandler.play_sound_door()
+			scene_changer.change_scene("res://Scenes/4_Quarto/Quarto.tscn")
 
 func _on_PortaQuarto_body_exited(body):
 	if body == player:
@@ -31,27 +34,28 @@ func _on_PortaQuarto_body_exited(body):
 
 func _on_PortaEscritorio_body_entered(body):
 	if body == player:
-		#AudioHandler.play_sound_door()
-		scene_changer.change_scene("res://Scenes/5_Escritorio/Escritorio.tscn")
+		if peDeCabraNoInventario:
+			AudioHandler.play_sound_door()
+			scene_changer.change_scene("res://Scenes/5_Escritorio/Escritorio.tscn")
 
 func _on_PortaBanheiro_body_entered(body):
 	if body == player:
-		#AudioHandler.play_sound_door()
+		AudioHandler.play_sound_door()
 		scene_changer.change_scene("res://Scenes/6_Banheiro/Banheiro.tscn")
 
 func _on_PortaSaida_body_entered(body):
 	if body == player:
-		#AudioHandler.play_sound_door()
-		scene_changer.change_scene("res://Scenes/GameWinner/GameWinner.tscn")
 		if chaveDaPortaPrincipalDaMansaoNoInventario:
+			AudioHandler.play_sound_door()
 			scene_changer.change_scene("res://Scenes/GameWinner/GameWinner.tscn")
 		else:
 			dialogo = "SemChaveDaDaPortaPrincipal"
 			dialogoAtivo = true
 
 func _on_PortaSaida_body_exited(body):
-			dialogoAtivo = false
+	dialogoAtivo = false
+
 func _on_PortaPorao_body_entered(body):
 	if body == player:
-		#AudioHandler.play_sound_door()
+		AudioHandler.play_sound_door()
 		scene_changer.change_scene("res://Scenes/1_Porao/Porao.tscn")

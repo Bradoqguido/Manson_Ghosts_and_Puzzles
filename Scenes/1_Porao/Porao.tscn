@@ -118,7 +118,7 @@ shape = SubResource( 8 )
 [node name="Chave" type="Area2D" parent="."]
 
 [node name="ColisorChave" type="CollisionShape2D" parent="Chave"]
-position = Vector2( 558.062, 241.343 )
+position = Vector2( 562.271, 247.797 )
 shape = SubResource( 9 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

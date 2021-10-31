@@ -4,6 +4,7 @@ onready var Player = null
 onready var midNight = false
 onready var chaveDaPortaPrincipalDaMansaoNoInventario = false
 onready var peDeCabraNoInventario = false
+onready var chaveDoEscritorioNoInventario = false
 onready var senhaDoCofreNoInventario = false
 
 func chamarDialogo(dialogo): # Passar o nome do dialogo que você quer executar.
